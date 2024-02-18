@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
-function App() {
+import Employees from './EmpFolder/Employees';
+import NewEmployee from './EmpFolder/NewEmployee';
+import EmployeeForm from './EmpFolder/EmployeeForm';
+import { EmployeeContext } from './EmpFolder/employee-context';
+import EmployeeContextProvider from './EmpFolder/employee-context';
+const App=() =>{
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EmployeeContextProvider>
+        <div>
+          <NewEmployee>
+            <EmployeeForm />
+          </NewEmployee>
+          <Employees/>
+        </div>
+    </EmployeeContextProvider>
   );
 }
-
 export default App;
