@@ -12,6 +12,7 @@ const EmployeeList=props=>
                 props.items.map((employee)=>(
                     <EmployeeItem
                     key={employee.id} 
+                    empid={employee.id}
                     name={employee.name} 
                     experience={employee.experience} 
                     date={employee.date}>

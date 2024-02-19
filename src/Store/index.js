@@ -24,7 +24,8 @@ const employeeSlice=createSlice({
          },
          removeEmployee(state,action)
          {
-
+            const employeeId = action.payload;
+            state.items = state.items.filter((employee) => employee.id !== employeeId); 
          }
     }
 });
@@ -37,13 +38,13 @@ export const sendEmployeeData=(employeeData)=>
         {
             const response=await fetch('https://employee-app-21ca8-default-rtdb.firebaseio.com/employee.json',
              {
-            method:'PUT',
-            body:JSON.stringify(employeeData),
-             });
-             if(!response.ok)
-             {
-                throw new Error("sending employees data failed...");
-             }
+                method:'PUT',
+                body:JSON.stringify(employeeData),
+                });
+                if(!response.ok)
+                {
+                    throw new Error("sending employees data failed...");
+                }           
         };
         try
         {

@@ -5,6 +5,7 @@
     padding: 0.5rem;
     margin: 1rem 0;
     background-color: gray;
+    gap: 2rem;
 }
 
 
@@ -37,5 +38,25 @@
     padding: 0.5rem;
     border-radius: 12px;
 }
+.employee-item button {
+    border-style: double;
+    border-color: red;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-left: auto; 
+  }
+  
+  .employee-item button:hover {
+    background-color: red;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
 
-
+  }
