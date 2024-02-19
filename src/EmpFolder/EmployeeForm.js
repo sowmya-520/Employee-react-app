@@ -4,6 +4,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { EmployeeContext } from './employee-context';
 import { useDispatch } from 'react-redux';
+import { employeeActions } from '../Store';
 const EmployeeForm=(props)=>
 {
    // const {onSaveEmployeeData}=useContext(EmployeeContext)
@@ -33,7 +34,8 @@ const EmployeeForm=(props)=>
         }
       //  props.onSaveEmployeeData(employeeData)
        // onSaveEmployeeData(employeeData);
-        dispatch({type:'ADD_EMPLOYEE',payload:employeeData});
+        //dispatch({type:'ADD_EMPLOYEE',payload:employeeData});
+        dispatch(employeeActions.addEmployee(employeeData));
         setEnteredName('');
         setEnteredExperience('');
         setEntereddate('');
